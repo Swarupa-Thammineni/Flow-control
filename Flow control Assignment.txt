@@ -1,0 +1,408 @@
+// Flow control Assignment
+
+// 1.A)check if integer number iks positive, negative, or zero.
+
+import java.util.*;
+public class Flow_con1 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        sc.close();
+        System.out.print("Given number is :"+num+". The number is -> ");
+        if(num<0) {
+            System.out.println("'Negative'");
+        }
+        else if(num==0) {
+            System.out.println("'Zero'");
+        }
+        else {
+             System.out.println("'Positive'");
+        }
+    }
+}
+
+// 1.B) Print true if 2 numbers have the same last digit.
+
+import java.util.*;
+
+public class Flow_con1b {
+    public static void main(String args []) {
+        System.out.print("Enter the numbers : ");
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        sc.close();
+        System.out.println("The two numbers are :"+ n1+ " and "+n2);
+        if (n1%10 == n2%10) {
+            System.out.println("lastDigit("+n1+","+n2+") -> true");
+        }
+        else {
+            System.out.println("lastDigit("+n1+","+n2+") -> false");
+        }
+    }
+}
+
+// 2) Check if a number is odd or even.
+
+import java.util.*;
+
+public class Flow_con2 {
+    public static void main(String args []) {
+        System.out.print("Enter a number :");
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        sc.close();
+        if(num%2 == 0) {
+            System.out.println(num+" is an even number");
+        }
+        else {
+             System.out.println(num + " is a odd number");
+        }
+    }
+}
+
+// 3) Command line arguments
+
+public class Flow_con3 {
+     public static void main(String args[]) {
+        int len = args.length;
+        if(len == 0){
+            System.out.println("No values");
+        }
+        else {
+            for(int i=0;i<len;i++) {
+                System.out.print(args[i]);
+                if(i+1 == len) {
+                    break;
+                }
+                System.out.print(",");
+            }
+        }
+     }
+}
+
+// 4) display 2 character in alphabetical order
+
+import java.util.*;
+
+public class Flow_con4 {
+    public static void main(String args[]) {
+        System.out.print(" Enter the characters c1 ans c2 : ");
+        Scanner sc = new Scanner(System.in);
+        char c1 = sc.next().charAt(0);
+        char c2 = sc.next().charAt(0);
+        sc.close();
+        if(c1 > c2) {
+            System.out.println(c2+","+c1);
+        }
+        else {
+            System.out.println(c1+ "," +c2);
+        }
+    }
+}
+
+// 5) check the input is alphabet or digit or any special character
+
+import java.util.*;
+
+public class Flow_con5 {
+    public static void main(String args[]) {
+        System.out.print("Enter the input : ");
+        Scanner sc = new Scanner(System.in);
+        char input = sc.next().charAt(0);
+        sc.close();
+        if((input >= 'a' && input <='z') || (input >='A' && input <= 'Z')) {
+            System.out.println("Alphabet");
+        }
+        else if(input >= '0' && input <= '9') {
+            System.out.println("Digit");
+        }
+        else {
+            System.out.println("Special character");
+        }
+    }
+}
+
+// 6) Command line arguments - if control statements
+
+public class Flow_con6 {
+    public static void main(String args[]){
+        String gender = args[0];
+        int age = Integer.valueOf(args[1]);
+        System.out.println(gender+" "+age);
+        if(gender.equalsIgnoreCase("Female")) {
+            if(age >=1 && age <=58) {
+                System.out.println("The percentage of interest is 8.2% ");
+            }
+            else if(age >=59 && age <=100) {
+                System.out.println("The percentage of interest is 9.2% ");
+            } 
+        }
+        else if(gender.equalsIgnoreCase("Male")) {
+            if(age >=1 && age <=58) {
+                System.out.println("The percentage of interest is 8.4% ");
+            }
+            else if(age >= 59 && age <= 100) {
+                System.out.println("The percentage of interest is 10.5% ");
+            }
+        }
+        else {
+            System.out.println();
+        }
+
+    }
+}
+
+
+// 7)convert the character from one case to other case
+
+import java.util.*;
+public class Flow_con7 {
+    public static void main (String args[]) {
+        System.out.print("Enter the character : ");
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.next().charAt(0);
+        if(Character.isLowerCase(ch)) {
+            System.out.println(ch+ "->"+ Character.toUpperCase(ch));
+        }
+        else if(Character.isUpperCase(ch)) {
+            System.out.println(ch+ "->"+ Character.toLowerCase(ch));
+        }
+    }
+}
+
+// 8)print colours according to colourcodes using switch statement
+
+import java.util.*;
+
+public class Flow_con8 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the colorcode R,B,G,O,Y,W : ");
+        char code = sc.next().charAt(0);
+        sc.close();
+        switch(code){
+            case 'R':System.out.println("R->Red");
+                     break;
+            case 'B':System.out.println("B->Blue");
+                     break;
+            case 'G':System.out.println("G->Green");
+                     break;
+            case 'O':System.out.println("O->Orange");
+                     break;
+            case 'Y':System.out.println("Y->Yellow");
+                     break;
+            case 'W':System.out.println("W->White");
+                     break;
+            default :System.out.println("Invalid code");
+        }
+
+    }
+}
+
+// 9)Print month according to number
+
+public class Flow_con9 {
+    public static void main(String args[]) {
+        if(args.length == 0){
+            System.out.println("Please enter the month in number ");
+        }
+        else {
+            int month = Integer.parseInt(args[0]);
+            switch(month) {
+                case 1:System.out.println("January");
+                         break;
+                case 2:System.out.println("February");
+                         break;
+                case 3:System.out.println("March");
+                         break;
+                case 4:System.out.println("April");
+                         break;
+                case 5:System.out.println("May");
+                         break;
+                case 6:System.out.println("June");
+                         break;
+                case 7:System.out.println("July");
+                         break;
+                case 8:System.out.println("August");
+                         break;
+                case 9:System.out.println("September");
+                         break;
+                case 10:System.out.println("October");
+                          break;
+                case 11:System.out.println("November");
+                          break;
+                case 12:System.out.println("December");
+                          break;
+                default:System.out.println("Invalid month");
+            }
+        }
+    }
+}
+
+// 10) Print numbers from 1 to 10 in a row
+
+public class Flow_con10 {
+    public static void main(String args[]) {
+        for(int i=1;i<=10;i++) {
+            System.out.print(i+" ");
+        }
+    }
+}
+
+// 11) Print even numbers between 23 to 57 in a separate row.
+
+public class Flow_con11 {
+    public static void main(String args[]) {
+        for(int i=23;i<=57;i++) {
+            if(i%2 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+// 12) Check whether a number is prime or not
+
+import java.util.*;
+public class Flow_con12 {
+    public static void main(String args []) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number : ");
+        int n = sc.nextInt();
+        int flag=0;
+        for(int i=2;i<n/2;i++) {
+            if(n%i == 0) {
+                flag++;
+            }
+        }
+        if(flag == 0) {
+            System.out.println(n + " is a prime number");
+        }
+        else {
+            System.out.println(n+" is not a prime number");
+        }
+    }
+}
+
+// 13) Print prime numbers from 10 to 99
+
+public class Flow_con13 {
+    public static void main(String args []) {
+        int flag;
+        System.out.println("Prime numbers from 10 to 99");
+        for(int i=10;i<=99;i++) {
+            flag=0;
+            for(int j=2;j<i/2;j++) {
+                if(i%j == 0) {
+                    flag++;
+                }
+            }
+            if(flag == 0){
+                System.out.println(i+" ");
+            }
+        }
+    }
+}
+
+// 14) Print sum of the digits of a number
+
+import java.util.*;
+public class Flow_con14 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter any number : ");
+        int n = sc.nextInt();
+        sc.close();
+        int num=n;
+        int sum=0;
+        while(n>0) {
+            int rem = n%10;
+            sum+=rem;
+            n=n/10;
+        }
+        System.out.println("The sum of digits of "+num+ " is "+sum);
+    }
+}
+
+// 15)Print the pattern
+*
+* *
+* * *
+
+//using while loop
+
+public class Flow_con15 {
+     public static void main(String args[]) {
+        int n = Integer.parseInt(args[0]);
+        int i=1;
+        while(i<=n) {
+            int j=1;
+            while(j<=i) {
+                System.out.print("* ");
+                j++;
+            }
+            System.out.println();
+            i++;
+        }
+     }
+}
+
+//using for loop
+
+public class Flow_con15 {
+     public static void main(String args[]) {
+        int n = Integer.parseInt(args[0]);
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<=i;j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+     }
+}
+
+// 16)Print the reverse of given number
+
+import java.util.*;
+public class Flow_con16 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter any nummber : ");
+        int n = sc.nextInt();
+        sc.close();
+        int num=0;
+        while(n>0) {
+            int rem = n%10;
+            num = num*10+rem;
+            n=n/10;
+        }
+        System.out.println("The reverse of the given number is "+num);
+    }
+}
+
+// 17)Check if the given number is palindrome or not
+
+import java.util.*;
+public class Flow_con17 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter any nummber : ");
+        int n = sc.nextInt();
+        sc.close();
+        int num=n;
+        int pal=0;
+        while(n>0) {
+            int rem = n%10;
+            pal = pal*10+rem;
+            n=n/10;
+        }
+        if(pal == num) {
+            System.out.println(pal+" is a palindrome");
+        }
+        else {
+            System.out.println(pal+" is not a palindrome");
+        }
+    }
+}
