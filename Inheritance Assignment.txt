@@ -1,0 +1,89 @@
+// 1) Bird class extends Animal class
+
+class Animal {
+    void eat() {
+        System.out.println("Animal - eat method");
+    }
+    void sleep() {
+        System.out.println("Animal - sleep method");
+    }
+}
+class Bird extends Animal {
+    void eat() {
+        System.out.println("Bird - eat method");
+    }
+    void sleep() {
+        System.out.println("Bird - sleep method");
+    }
+    void fly() {
+        System.out.println("Bird - fly method");
+    }
+}
+public class Inheritance1 {
+    public static void main(String args[]) {
+        Animal a = new Animal();
+        Bird b = new Bird();
+        a.eat();
+        a.sleep();
+        b.eat();
+        b.sleep();
+        b.fly();
+    }
+}
+
+
+// 2) Employee extends Person
+
+class Person {
+    String name;
+    Person(String name) {
+        this.name = name;
+    }
+    public String getname() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name=name;
+    }
+    public String toString() {
+        return "Person[name: "+name+"]";
+    }
+}
+class Employee extends Person  {
+    double salary;
+    int startedYear;
+    String insuranceNum;
+    Employee(String name,double salary,int startedYear,String insuranceNum) {
+        super(name);
+        this.salary=salary;
+        this.startedYear=startedYear;
+        this.insuranceNum=insuranceNum;
+    }
+    public double getSalary() {
+        return salary;
+    } 
+    public void setSalary(double salary) {
+        this.salary=salary;
+    }
+    public int getYear() {
+        return startedYear;
+    }
+    public void setYear(int statedYear) {
+        this.startedYear=startedYear;
+    }
+    public String getInsuranceNum() {
+        return insuranceNum;
+    }
+    public void setinsurarnceNum(String insuranceNum) {
+        this.insuranceNum=insuranceNum;
+    }
+    public String toString() {
+        return "Employee["+super.toString()+", salary: "+salary+", Started year: "+startedYear+", Insurance number: "+insuranceNum+"]";
+    }
+}
+public class Inheritance2 {
+    public static void main(String args[]) {
+        Employee e = new Employee("Anny",40000,2021,"DHG8eut");
+        System.out.println(e.toString());
+    }
+} 
