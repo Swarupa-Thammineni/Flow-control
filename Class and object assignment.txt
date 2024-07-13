@@ -1,0 +1,43 @@
+// 1) Find the volume of a box using parametered constructor 
+
+import java.util.*;
+public class Box {
+    int width;
+    int height;
+    int depth;
+    ClassObj1(int width,int height,int depth) {
+        this.width=width;
+        this.height=height;
+        this.depth=depth;
+    }
+    public int volume() {
+        return width*height*depth;
+    }
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the width, height, and depth: ");
+        int w=sc.nextInt();
+        int h=sc.nextInt();
+        int d=sc.nextInt();
+        Box obj = new Box(w,h,d);
+        int vol = obj.volume();
+        System.out.println("Volume of the box : "+ vol);
+    }
+}
+
+
+// 2) Calculating power of a number using static method
+
+import java.util.*;
+public class ClassObj2 {
+    public static double powerInt(int n1,int n2) {
+        return Math.pow(n1,n2);
+    }
+    public static double powerDouble(int n1,int n2) {
+        return Math.pow(n1,n2);
+    }
+    public static void main(String args[]) {
+        System.out.println(powerInt(6,3));
+        System.out.println(powerDouble(5,5));
+    }
+}
